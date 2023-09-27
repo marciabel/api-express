@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagina de ayuda</title>
-</head>
-<body>
-    <h1>Pagina de ayuda - API Express</h1>
-</body>
+  </head>
+  <body>
+    <h1>Pagina de ayuda - Meals & Drinks</h1>
+    <hr/>
+    <div>
+      <p class="description">
+        Esta API fue desarrollada como proyecto evaluativo para la materia
+        Laboratorio de Computación IV, de la TUP. UTN FRBB
+      </p>
+      <p>
+        Se utilizó NodeJS con Express para su desarrollo, y se encuentra
+        deployada en Render.
+      </p>
+      <a href="https://meal-and-drinks.onrender.com/"
+        >URL API Deployada en servidor</a
+      >
+    </div>
+    <hr>
+    <section>
+        <h2>Meals</h2>
+            <div class="endpoint_detail">
+                <h3>Random Meals</h3>
+                <p>
+                <em>Random meals</em> devuelve una lista de 20 comidas random con los siguientes atributos:              with the following attributes:
+                </p>
+                <code>{{url}}/meals/random</code>
+                <ul>
+                    <li>idMeal</li>
+                    <li>strMeal: nombre del plato</li>
+                    <li>strArea: region</li>
+                    <li>strMealThumb: link hacia un imagen del plato</li>
+                    <li>strYoutube: link a un video de Youtube de la receta</li>
+                </ul>
+                <p>Nota: este endpoint tarda unos segundos en procesar la request. </p>
+            </div>
+            <div class="endpoint_detail">
+                <h3>Get meal by ID</h3>
+                <p>
+                <em>Get meal by ID</em> permite recuperar un plato en particular, pasando su Id como parametro en la URL de la request
+                </p>
+                <code>{{url}}/meals/id/{id}</code>
+                <p>Nota: no hay una lista taxativa conteniendo todos los IDs. En principio cualquier ID mayor a 52764 y menor a 53076, incluyendo los extremos, funcionaria.</p>
+            </div>
+            <div class="endpoint_detail">
+                <h3>Filter meals</h3>
+                <p>
+                <em>Filter meals</em> permite aplicar un filtro a la request con query params. Hay dos posibilidades:
+                </p>
+                <ul>
+                    <li>
+                        <p>"By first letter" o segun la primera letra del nombre. Retorna una lista de comidas que comienzan con la letra indicada</p>
+                        <code>{{url}}/meals/filter?f={letra}</code>
+                    </li>
+                    <li>
+                        <p>"By category" o por categoria, retorna una lista de comidas dentro de la categoria indicada. Algunos ejemplos:</p>
+                        <ul>
+                            <li>Breakfast</li>
+                            <li>Desserts</li>
+                            <li>Miscellanous</li>
+                            <li>Pasta</li>
+                            <li>Seafood</li>
+                            <li>Starter</li>
+                        </ul>
+                        <code>{{url}}/meals/filter?c={categoria}</code>
+                    </li>
+                </ul>
+                <p>Nota: Por el momento sólo se puede usar un filtro por request, es decir, filtrar por letra o por categoria</p>
+            </div>
+    </section>
+    <hr>
+    <section>
+        <h2>Drinks</h2>
+            <div class="endpoint_detail">
+                <h3>Random Drinks</h3>
+                <p>
+                <em>Random drinks</em> *descripcion*
+                </p>
+                <code>{{url}}/drinks/randomDrinks</code>
+                <ul>
+                    <li>idDrink</li>
+                    <li>strDrink: nombre del trago</li>
+                    <li>strInstructions: instrucciones para preparar el trago</li>
+                    <li>strDrinkThumb: link hacia un imagen del plato</li>
+                </ul>
+                <p>Nota: este endpoint tarda unos segundos en procesar la request. </p>
+            </div>
+            <div class="endpoint_detail">
+                <h3>Get drink by ID</h3>
+                <p>
+                <em>Get drink by ID</em> *descripcion*
+                </p>
+                <code>{{url}}/drinks/{id}</code>
+                <p>Nota: no hay una lista taxativa conteniendo todos los IDs. Puede probar con los siguientes: </p>
+            </div>
+            <div class="endpoint_detail">
+                <h3>Filter drink</h3>
+                <p>
+                <em>Filter drink</em> *descripcion
+                </p>
+                <ul>
+                    <li>
+                        <p>"By first letter" o segun la primera letra del nombre. Retorna una lista de tragos que comienzan con la letra indicada</p>
+                        <code>{{url}}/drinks/filter_drinks?f={letra}</code>
+                    </li>
+                    <li>
+                        <p>"By category" o por categoria, retorna una lista de tragos dentro de la categoria indicada. Algunos ejemplos:</p>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <code>{{url}}/drinks/filter_drinks?c={categoria}</code>
+                    </li>
+                </ul>
+                <p>Nota: Por el momento sólo se puede usar un filtro por request, es decir, filtrar por letra o por categoria</p>
+            </div>
+    </section>
+  </body>
 </html>
