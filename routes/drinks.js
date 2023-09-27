@@ -1,9 +1,10 @@
 const { Router } = require('express');
-const { getRandomDrink, getIdDrink } = require('../controllers/drinks');
+const { getRandomDrinks, getIdDrink} = require('../controllers/drinks');
 
 const routes = Router();
 
-routes.get('/randomDrink', getRandomDrink);
+
+routes.get('/randomDrinks', getRandomDrinks);
 routes.get('/:idDrink', getIdDrink);
 
 module.exports = routes;
