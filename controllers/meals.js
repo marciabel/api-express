@@ -35,13 +35,46 @@ const createRandomMeals = async () => {
 const getRandomMeals = async (req = request, res = response) => {
     try {
         const randomMeals = await createRandomMeals();
-        res.status(200).json(randomMeals);
+        const response = {"status": res.status, "data": randomMeals, "statusText": res.statusText};
+        res.status(200).json(response);
     } catch (error) {
         console.log(error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
 
+
+const getMealById = (req = request, res = response) => {
+    const api = process.env.API_KEY;
+
+    const { idMeal} = req.params;
+
+    axios.get(`${url}/${api}/lookup.php?i=${idMeal}`)
+        .then(({ status, data, statusText }) => {
+            // handle success
+            console.log({ status, data, statusText });
+            
+            res.status(200).json({
+                status,
+                data,                
+                statusText,                
+            });
+        })
+        .catch((error)=>{
+            // handle error
+            console.log(error);
+            res.status(400).json({
+                status:400,
+                msg: 'Error inesperado'
+            });
+        });  
+}
+
+const getMealsFilter = (req = request, res = response) => {
+
+}
+
 module.exports = {
-    getRandomMeals
+    getRandomMeals,
+    getMealById
 };
