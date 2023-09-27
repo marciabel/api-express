@@ -21,7 +21,7 @@ class Server{
 
     routers() {
         this.app.use('/api-express/v1/meals', require('../routes/meals'));
-        //this.app.use('/api-express/v1/drinks', require('../routes/pame'));
+        this.app.use('/api-express/v1/drinks', require('../routes/drinks'));
     
         this.app.all('*', (req, res) => {
             res.status(404).json({message:'404 Page Not Found'})
