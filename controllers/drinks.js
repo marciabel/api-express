@@ -63,7 +63,8 @@ const getFilterDrinks = (req = request, res = response) => {
     ( f != undefined) ? query_params += f && `search.php?f=${f}`:
     ( c != undefined) ? query_params += c && `filter.php?c=${c}`:
 
-    axios.get(`${url}/api/json/v1/${api}/{query_params}`)
+    console.log(query_params)
+    axios.get(`${url}/api/json/v1/${api}/${query_params}`)
         .then(({ status, data, statusText }) => {
             console.log({ status, data, statusText });
             const {drinks} = data;
