@@ -79,7 +79,7 @@
             <div class="endpoint_detail">
                 <h3>Random Drinks</h3>
                 <p>
-                <em>Random drinks</em> *descripcion*
+                <em>Random drinks devuelve una lista de 20 tragos aleatorios con los siguientes atributos:</em>
                 </p>
                 <code>{{url}}/drinks/randomDrinks</code>
                 <ul>
@@ -93,7 +93,7 @@
             <div class="endpoint_detail">
                 <h3>Get drink by ID</h3>
                 <p>
-                <em>Get drink by ID</em> *descripcion*
+                <em>ID Drink permite recuperar un trago en particular, pasando su Id como parametro en la URL de la request</em>
                 </p>
                 <code>{{url}}/drinks/{id}</code>
                 <p>Nota: no hay una lista taxativa conteniendo todos los IDs. Puede probar con los siguientes: </p>
@@ -101,7 +101,7 @@
             <div class="endpoint_detail">
                 <h3>Filter drink</h3>
                 <p>
-                <em>Filter drink</em> *descripcion
+                <em>Filter Drink le permite recuperar tragos por la inicial del nombre o por categoría.</em> 
                 </p>
                 <ul>
                     <li>
@@ -111,12 +111,8 @@
                     <li>
                         <p>"By category" o por categoria, retorna una lista de tragos dentro de la categoria indicada. Algunos ejemplos:</p>
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>Cocktail</li>
+                            <li>Ordinary_Drink</li>
                         </ul>
                         <code>{{url}}/drinks/filter_drinks?c={categoria}</code>
                     </li>
