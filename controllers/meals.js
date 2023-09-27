@@ -51,9 +51,7 @@ const getMealById = (req = request, res = response) => {
 
     axios.get(`${url}/${api}/lookup.php?i=${idMeal}`)
         .then(({ status, data, statusText }) => {
-            // handle success
-            console.log({ status, data, statusText });
-            
+            //Success
             res.status(200).json({
                 status,
                 data,                
@@ -61,7 +59,7 @@ const getMealById = (req = request, res = response) => {
             });
         })
         .catch((error)=>{
-            // handle error
+            // Error
             console.log(error);
             res.status(400).json({
                 status:400,
@@ -71,10 +69,45 @@ const getMealById = (req = request, res = response) => {
 }
 
 const getMealsFilter = (req = request, res = response) => {
+    const api = process.env.API_KEY;
+    const {f, c} = req.query;
+
+    let queryParams = '';
+    console.log(f, c);
+
+    (f != undefined) ? queryParams += f && `search.php?f=${f}` :
+    (c != undefined) ? queryParams += c && `filter.php?c=${c}` :
+
+    //queryParams += c && `c=${c}`;
+    console.log(queryParams)
+
+    axios.get(`${url}/${api}/${queryParams}`)
+    .then(({ status, data, statusText }) => {
+        // handle success
+        console.log({ status, data, statusText });
+        console.log(data)
+        const {meals} = data;
+        console.log(meals)
+        //const {results, page } = data;
+        res.status(200).json({
+            status,
+            meals,
+            statusText,                
+        });
+    })
+    .catch((error)=>{
+        // handle error
+        console.log(error);
+        res.status(400).json({
+            status:400,
+            msg: 'Error inesperado'
+        });
+    });        
 
 }
 
 module.exports = {
     getRandomMeals,
-    getMealById
+    getMealById,
+    getMealsFilter
 };
