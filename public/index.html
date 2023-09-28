@@ -6,7 +6,7 @@
     <title>Pagina de ayuda</title>
   </head>
   <body>
-    <h1>Pagina de ayuda - Meals & Drinks</h1>
+    <h1>Pagina de ayuda - Meals & Drinks - v1.0.0</h1>
     <hr/>
     <div>
       <p class="description">
@@ -29,7 +29,7 @@
                 <p>
                 <em>Random meals</em> devuelve una lista de 20 comidas random con los siguientes atributos:              with the following attributes:
                 </p>
-                <code>{{url}}/meals/random</code>
+                <code>{{url}}/api-express/v1/meals/random</code>
                 <ul>
                     <li>idMeal</li>
                     <li>strMeal: nombre del plato</li>
@@ -44,7 +44,7 @@
                 <p>
                 <em>Get meal by ID</em> permite recuperar un plato en particular, pasando su Id como parametro en la URL de la request
                 </p>
-                <code>{{url}}/meals/id/{id}</code>
+                <code>{{url}}/api-express/v1/meals/id/{id}</code>
                 <p>Nota: no hay una lista taxativa conteniendo todos los IDs. En principio cualquier ID mayor a 52764 y menor a 53076, incluyendo los extremos, funcionaria.</p>
             </div>
             <div class="endpoint_detail">
@@ -55,7 +55,7 @@
                 <ul>
                     <li>
                         <p>"By first letter" o segun la primera letra del nombre. Retorna una lista de comidas que comienzan con la letra indicada</p>
-                        <code>{{url}}/meals/filter?f={letra}</code>
+                        <code>{{url}}/api-express/v1/meals/filter?f={letra}</code>
                     </li>
                     <li>
                         <p>"By category" o por categoria, retorna una lista de comidas dentro de la categoria indicada. Algunos ejemplos:</p>
@@ -67,7 +67,7 @@
                             <li>Seafood</li>
                             <li>Starter</li>
                         </ul>
-                        <code>{{url}}/meals/filter?c={categoria}</code>
+                        <code>{{url}}/api-express/v1/meals/filter?c={categoria}</code>
                     </li>
                 </ul>
                 <p>Nota: Por el momento sólo se puede usar un filtro por request, es decir, filtrar por letra o por categoria</p>
@@ -81,7 +81,7 @@
                 <p>
                 <em>Random drinks devuelve una lista de 20 tragos aleatorios con los siguientes atributos:</em>
                 </p>
-                <code>{{url}}/drinks/randomDrinks</code>
+                <code>{{url}}/api-express/v1/drinks/randomDrinks</code>
                 <ul>
                     <li>idDrink</li>
                     <li>strDrink: nombre del trago</li>
@@ -95,7 +95,7 @@
                 <p>
                 <em>ID Drink permite recuperar un trago en particular, pasando su Id como parametro en la URL de la request</em>
                 </p>
-                <code>{{url}}/drinks/{id}</code>
+                <code>{{url}}/api-express/v1/drinks/{id}</code>
                 <p>Nota: no hay una lista taxativa conteniendo todos los IDs. Puede probar con los siguientes: </p>
             </div>
             <div class="endpoint_detail">
@@ -106,10 +106,10 @@
                 <ul>
                     <li>
                         <p>"By first letter" o segun la primera letra del nombre. Retorna una lista de tragos que comienzan con la letra indicada</p>
-                        <code>{{url}}/drinks/filter_drinks?f={letra}</code>
+                        <code>{{url}}/api-express/v1/drinks/filter_drinks?f={letra}</code>
                     </li>
                     <li>
-                        <p>"By category" o por categoria, retorna una lista de tragos dentro de la categoria indicada. Algunos ejemplos:</p>
+                        <p>"By category" o por categoria, retorna una lista de tragos dentro de la categoria indicada. Algunos ejemplos: 17253, 12186, 17241, 11662</p>
                         <ul>
                             <li>Cocktail</li>
                             <li>Beer</li>
@@ -118,7 +118,7 @@
                             <li>Cocoa</li>
                             <li>Ordinary_Drink</li>
                         </ul>
-                        <code>{{url}}/drinks/filter_drinks?c={categoria}</code>
+                        <code>{{url}}/api-express/v1/drinks/filter_drinks?c={categoria}</code>
                     </li>
                 </ul>
                 <p>Nota: Por el momento sólo se puede usar un filtro por request, es decir, filtrar por letra o por categoria</p>
