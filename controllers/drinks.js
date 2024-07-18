@@ -15,13 +15,36 @@ const getRandomDrinks = (req = request, res = response) => {
             axios.get(`${url}/api/json/v1/${api}/random.php`)
                 .then(({ status, data, statusText }) => {
                     const { drinks } = data;
-                    const { idDrink, strDrink, strInstructions, strDrinkThumb } = drinks[0];
-
+                    const { idDrink, 
+                            strDrink, 
+                            strInstructions, 
+                            strDrinkThumb, 
+                            strIngredient1,
+                            strIngredient2,
+                            strIngredient3,
+                            strIngredient4,
+                            strIngredient5,
+                            strMeasure1,
+                            strMeasure2,
+                            strMeasure3,
+                            strMeasure4,
+                            strMeasure5,
+                         } = drinks[0];
+                    
+                    const ingredients = [
+                        {name: strIngredient1, measure: strMeasure1},
+                        {name: strIngredient2, measure: strMeasure2},
+                        {name: strIngredient3, measure: strMeasure3},
+                        {name: strIngredient4, measure: strMeasure4},
+                        {name: strIngredient5, measure: strMeasure5},
+                    ]
+                    
                     return {
                         idDrink,
                         strDrink,
                         strInstructions,
-                        strDrinkThumb
+                        strDrinkThumb,
+                        ingredients
                     };
                 })
                 .catch((error) => {

@@ -10,8 +10,8 @@ const getRandomMeal = async () => {
         axios.get(`${url}/${api}/random.php`)
             .then(({ status, data, statusText }) => {
                 const { meals } = data;
-                const { idMeal, strMeal, strArea, strMealThumb, strYoutube } = meals[0];
-                resolve({ idMeal, strMeal, strArea, strMealThumb, strYoutube });
+                const { idMeal, strMeal, strArea, strMealThumb, strYoutube, strDescription } = meals[0];
+                resolve({ idMeal, strMeal, strArea, strMealThumb, strYoutube, strDescription });
             })
             .catch((error) => {
                 console.log(error);
@@ -23,7 +23,7 @@ const getRandomMeal = async () => {
 const createRandomMeals = async () => {
     const mealList = [];
 
-    for (var i=0; i<20; i++) {
+    for (var i=0; i< 10; i++) {
         const data = await getRandomMeal();
         mealList.push(data);
         (console.log(mealList)); 
