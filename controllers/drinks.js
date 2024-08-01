@@ -6,7 +6,7 @@ const url = 'https://www.thecocktaildb.com'
 
 const getRandomDrinks = (req = request, res = response) => {
     const api = process.env.API_KEY;
-    const numDrinks = 20;
+    const numDrinks = 10;
 
     const drinksPromises = [];
 
