@@ -27,7 +27,7 @@
             <div class="endpoint_detail">
                 <h3>Random Meals</h3>
                 <p>
-                <em>Random meals</em> devuelve una lista de 20 comidas random con los siguientes atributos:              with the following attributes:
+                <em>Random meals</em> devuelve una lista de 10 comidas random con los siguientes atributos: 
                 </p>
                 <code>{{url}}/api-express/v1/meals/random</code>
                 <ul>
@@ -36,6 +36,7 @@
                     <li>strArea: region</li>
                     <li>strMealThumb: link hacia un imagen del plato</li>
                     <li>strYoutube: link a un video de Youtube de la receta</li>
+                    <li>strInstructions: instrucciones de la receta</li>
                 </ul>
                 <p>Nota: este endpoint tarda unos segundos en procesar la request. </p>
             </div>
@@ -79,7 +80,7 @@
             <div class="endpoint_detail">
                 <h3>Random Drinks</h3>
                 <p>
-                <em>Random drinks devuelve una lista de 20 tragos aleatorios con los siguientes atributos:</em>
+                <em>Random drinks devuelve una lista de 10 tragos aleatorios con los siguientes atributos:</em>
                 </p>
                 <code>{{url}}/api-express/v1/drinks/randomDrinks</code>
                 <ul>
@@ -87,6 +88,7 @@
                     <li>strDrink: nombre del trago</li>
                     <li>strInstructions: instrucciones para preparar el trago</li>
                     <li>strDrinkThumb: link hacia un imagen del plato</li>
+                    <li>ingredients: una lista de 5 ingredientes con sus medidas</li>
                 </ul>
                 <p>Nota: este endpoint tarda unos segundos en procesar la request. </p>
             </div>
